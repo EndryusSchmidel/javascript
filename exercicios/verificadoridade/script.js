@@ -33,7 +33,7 @@ function verificar() {
         } else {
             window.alert('Erro na verificação do sexo!')
         }
-        res.innerHTML = (`Verificado que é ${genero.toLowerCase()} com ${idade} anos.<br>`)
+        res.innerHTML = (`Verificado que é ${genero.toLowerCase()} com ${idade} anos.`)
         res.appendChild(img)
     }
 }
