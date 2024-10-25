@@ -1,0 +1,40 @@
+body {
+    height: 100vh;
+}
+
+h1{
+    font-style: italic;
+    text-align: center;
+    color: rgb(251, 251, 251);
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+    text-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+    text-shadow: 0 0 30px rgba(0, 255, 255, 0.5);
+    text-shadow: 0 0 40px rgba(0, 255, 255, 0.8);
+}
+
+section {
+    background: rgba(151, 151, 151, 0.539);
+    border-radius: 8px;
+    padding: 20px;
+    width: 500px;
+    margin: auto;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.301);
+}
+
+div {
+    text-align: center;
+    color: white;
+}
+
+img {
+    margin-top: 10px;
+    border-radius: 50%;
+    width: 450px;
+    box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.538);
+}
+
+footer {
+    margin-top: 10px;
+    text-align: center;
+    color: rgb(0, 0, 0);
+}
