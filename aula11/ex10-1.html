@@ -1,22 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Radar de velocidade 1.1</title>
     <link rel="stylesheet" href="style2.css">
 </head>
+
 <body>
     <section id="menu">
         <h1>Radar de velocidade</h1>
         <div id="campo">
             <label for="velo">Velocidade do veículo<br></label>
-            <input id="ivelo"
-            placeholder="(Km/h)"
-            class="input"
-            name="velo"
-            type="number"
-            />
+            <input id="ivelo" placeholder="(Km/h)" class="input" name="velo" type="number" />
         </div>
         <div class="campobotao">
             <button class="btn" onclick="calcular()" value="verificar">Verificar</button>
@@ -29,22 +26,29 @@
         <a id="meulink" href="https://github.com/EndryusSchmidel" target="_blank">&copy;Endryus Schmidel</a>
     </footer>
     <script>
+        const input = document.getElementById('ivelo');
+        input.addEventListener('keypress', function (event) {
+            if (event.key === 'Enter') {
+                event.preventDefault();
+                calcular()
+            }
+        });
         function calcular() {
             var txtv = window.document.querySelector('input#ivelo')
             var res = window.document.querySelector('div#res')
             var vel = Number(txtv.value)
             if (vel < 0) {
                 window.alert('Erro, a velocidade precisa ser 0 ou mais para calcular!')
-            }else if (vel > 60) {
+            } else if (vel > 60) {
                 res.innerHTML = `<p id='msgmulta'>Você está multado por excesso de velocidade! (${vel}Km/h)</p>`
             }
             else {
                 res.innerHTML = `<p>Sua velocidade atual é de <strong>${vel}</strong> Km/h.</p>`
                 res.innerHTML += `<p>Dirija sempre com cinto de segurança!</p>`
             }
-            
         }
     </script>
-    
+
 </body>
+
 </html>
