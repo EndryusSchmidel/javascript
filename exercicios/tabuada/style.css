@@ -1,8 +1,36 @@
+@media screen and (orientation: portrait){
+    main {
+        height: auto;
+        width: 400px;
+    }
+    
+    section#menu {
+        width: 300px;
+        columns: 1;
+    }
+
+}
+
+
 body {
-    background-color: black;
+    background-color: wheat;
     color: rgb(0, 0, 0);
+    text-align: center;
+
+    & main {
+        display: grid;
+        color: black;
+        width: 400px;
+        place-items: center;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
     & h1 {
-        color: white;
+        text-shadow: 11px 11px 15px rgba(0, 0, 0, 0.637);
+
     }
 
     & footer {
@@ -10,8 +38,220 @@ body {
     }
 }
 
+
+
 section {
-    background-color: white;
-    margin: 20px;
-    width: 300px;
+    animation: customAni 4s cubic-bezier(0.36, 0, 0.66, -0.56) 0s infinite normal none;
+
+    background-color: rgba(0, 0, 0, 0.811);
+    border-radius: 20px;
+    box-shadow: 1px 1px 15px rgb(0, 0, 0);
+    /* width: 400px; */
+    margin: auto;
+    width: 400px;
+    padding: 20px;
+    color: wheat;
+    columns: 2;
+
+    & input {
+        margin: 10px;
+        text-align: left;
+        width: 100px;
+        padding: 0.5em;
+        flex: 1;
+        background-color: gray;
+        color: wheat;
+        text-shadow: 1px 1px 5px white;
+        box-shadow: 1px 1px 10px wheat;
+        outline-color: wheat;
+        margin-top: 20px;
+    }
+
+    & input:hover {
+        box-shadow: 0px 0px 15px inset wheat, 0px 0px 20px wheat;
+    }
+
+    & label {
+        width: 30px;
+    }
+
+    & #btn {
+        margin-top: 10px;
+        text-align: center;
+    }
+
+    & #campoBotao {
+        box-shadow: 0px 0px 15px rgb(252, 252, 252);
+        font-size: 1.3em;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        border-radius: 10px;
+        /* transition: all 0.5s cubic-bezier(0.42, 0, 0.58, 1); */
+        transition: all 0.5s cubic-bezier(0.1, -0.50, 0.735, 0.045);
+    }
+
+    #campoBotao:hover {
+        transform: scale(115%) translate(-5%, -5%);
+        box-shadow: 4px 6px 6px rgb(252 252 252 / 40%);
+        font-size: 1.1em;
+        transition: 0.25s ease-in-out;
+    }
+
+    & #res {
+        text-align: center;
+    }
 }
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.btn {
+    --border-color: linear-gradient(-45deg, #000000, #ffffff, wheat);
+    --border-width: 0.125em;
+    --curve-size: 0.5em;
+    --blur: 30px;
+    --bg: #080312;
+    --color: wheat;
+    color: var(--color);
+    cursor: pointer;
+    /* use position: relative; so that BG is only for .btn */
+    position: relative;
+    isolation: isolate;
+    display: inline-grid;
+    place-content: center;
+    padding: 0.5em 1.5em;
+    font-size: 17px;
+    border: 0;
+    text-transform: uppercase;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.6);
+    clip-path: polygon(
+            /* Top-left */
+            0% var(--curve-size),
+            var(--curve-size) 0,
+            /* top-right */
+            100% 0,
+            100% calc(100% - var(--curve-size)),
+            /* bottom-right 1 */
+            calc(100% - var(--curve-size)) 100%,
+            /* bottom-right 2 */
+            0 100%);
+    transition: color 250ms;
+    margin-top: 20px;
+}
+
+.btn::after,
+.btn::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+}
+
+.btn::before {
+    background: var(--border-color);
+    background-size: 300% 300%;
+    animation: move-bg7234 5s ease infinite;
+    z-index: -2;
+}
+
+@keyframes move-bg7234 {
+    0% {
+        background-position: 31% 0%;
+    }
+
+    50% {
+        background-position: 70% 100%;
+    }
+
+    100% {
+        background-position: 31% 0%;
+    }
+}
+
+.btn::after {
+    background: var(--bg);
+    z-index: -1;
+    clip-path: polygon(
+            /* Top-left */
+            var(--border-width) calc(var(--curve-size) + var(--border-width) * 0.5),
+            calc(var(--curve-size) + var(--border-width) * 0.5) var(--border-width),
+            /* top-right */
+            calc(100% - var(--border-width)) var(--border-width),
+            calc(100% - var(--border-width)) calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)),
+            /* bottom-right 1 */
+            calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)) calc(100% - var(--border-width)),
+            /* bottom-right 2 */
+            var(--border-width) calc(100% - var(--border-width)));
+    transition: clip-path 500ms;
+}
+
+.btn:where(:hover, :focus)::after {
+    clip-path: polygon(
+            /* Top-left */
+            calc(100% - var(--border-width)) calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)),
+            calc(100% - var(--border-width)) var(--border-width),
+            /* top-right */
+            calc(100% - var(--border-width)) var(--border-width),
+            calc(100% - var(--border-width)) calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)),
+            /* bottom-right 1 */
+            calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)) calc(100% - var(--border-width)),
+            /* bottom-right 2 */
+            calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)) calc(100% - var(--border-width)));
+    transition: 200ms;
+}
+
+.btn:where(:hover, :focus) {
+    color: black;
+}
+
+
+
+footer a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    transition: 0.15s ease-in-out;
+}
+
+footer a:hover {
+    color: rgb(0, 0, 0);
+    text-decoration: underline;
+    padding: 10px;
+    background: linear-gradient(45deg, #00000055, #00000055);
+    box-shadow: 0 0 10px #000000 inset;
+    border-radius: 15px;
+}
+
+@keyframes customAni {
+    0% {
+        transform: translate(0);
+    }
+
+    20% {
+        transform: translate(-2px, 2px);
+    }
+
+    40% {
+        transform: translate(-2px, -2px);
+    }
+
+    60% {
+        transform: translate(2px, 2px);
+    }
+
+    80% {
+        transform: translate(2px, -2px);
+    }
+
+    100% {
+        transform: translate(0);
+    }
+}
+
+footer {
+    margin-top: 30px;
+    text-align: center;
+    text-shadow: 11px 11px 15px rgba(0, 0, 0, 0.984);
+}
+
