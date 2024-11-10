@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analisador de números</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <main>
+        <header>
+            <h1>Analisador de números</h1>
+        </header>
+        <section>
+            <div id="um" class="box1">
+                <div id="recebe">
+                    <label for="num">Número:</label>
+                    <input type="number" name="num" id="idnum" value="number">
+                    <button id="idadicionar" class="btn" value="adicionar" onclick="adicionar()">Adicionar</button>
+                </div>
+                <div id="lista">
+                    <p>Números adicionados:</p>
+                    <select name="lst" id="idlst" size="6">
+
+                    </select>
+                </div>
+                <div id="divbotaofin">
+                    <button id="idlimpar" class="btn2" value="limpar" onclick="limpar()">Limpar</button>
+                    <button id="idfinalizar" class="btn2" value="finalizar" onclick="finalizar()">Finalizar</button>
+                </div>
+            </div>
+            <div id="dois" class="box2">
+                <div id="res">
+                    <p class="comeco">
+                        | Total: 0
+                        <br>
+                        <br>
+                        | Maior valor: undefined
+                        <br>
+                        <br>
+                        | Menor valor: undefined
+                        <br>
+                        <br>
+                        | Soma: 0
+                        <br><br>
+                        | Média: NaN
+                    </p>
+                </div>
+            </div>
+        </section>
+        <footer>
+            <p><strong>&copy;<a href="https://github.com/EndryusSchmidel" target="_blank">Endryus Schmidel</a></strong>
+            </p>
+        </footer>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
