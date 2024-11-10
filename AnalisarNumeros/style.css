@@ -111,6 +111,7 @@ select {
 
 #res>p {
     margin-top: 20px;
+    margin-left: 10px;
     color: wheat;
 }
 
